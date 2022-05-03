@@ -2,6 +2,7 @@ import {
   Container,
   Image,
   SelectedRating,
+  Content,
   Heading,
   Text,
 } from "./ThankYou.styles";
@@ -18,11 +19,13 @@ export function ThankYou({ rating }: Props) {
         alt="Illustration of a smartphone printing out a receipt, surrounded by a floating credit card and a circle"
       />
       <SelectedRating>You selected {rating} out of 5</SelectedRating>
-      <Heading>Thank you!</Heading>
-      <Text>
-        We appreciate you taking the time to give a rating. If you ever need
-        more support, don't hesitate to get in touch!
-      </Text>
+      <Content>
+        <Heading>Thank you!</Heading>
+        <Text>
+          We appreciate you taking the time to give a rating. If you ever need
+          more support, don't hesitate to get in touch!
+        </Text>
+      </Content>
     </Container>
   );
 }

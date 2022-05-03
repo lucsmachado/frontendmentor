@@ -1,6 +1,8 @@
+import { Radio } from "../Radio";
 import {
   RatingForm,
   Circle,
+  Content,
   Heading,
   Text,
   Numbers,
@@ -19,64 +21,56 @@ export function Rating({ rating, onChange, onSubmit }: Props) {
       <Circle>
         <img src="/assets/icon-star.svg" alt="Orange star icon" />
       </Circle>
-      <Heading>How did we do?</Heading>
-      <Text>
-        Please let us know how we did with your support request. All feedback is
-        appreciated to help us support our offering!
-      </Text>
+      <Content>
+        <Heading>How did we do?</Heading>
+        <Text>
+          Please let us know how we did with your support request. All feedback
+          is appreciated to help us support our offering!
+        </Text>
+      </Content>
       <Numbers>
-        <Circle>
-          <input
-            type="radio"
-            name="rating"
-            value="1"
-            checked={rating === 1}
-            onChange={onChange}
-            required
-          />
-        </Circle>
-        <Circle>
-          <input
-            type="radio"
-            name="rating"
-            value="2"
-            checked={rating === 2}
-            onChange={onChange}
-            required
-          />
-        </Circle>
-        <Circle>
-          <input
-            type="radio"
-            name="rating"
-            value="3"
-            checked={rating === 3}
-            onChange={onChange}
-            required
-          />
-        </Circle>
-        <Circle>
-          <input
-            type="radio"
-            name="rating"
-            value="4"
-            checked={rating === 4}
-            onChange={onChange}
-            required
-          />
-        </Circle>
-        <Circle>
-          <input
-            type="radio"
-            name="rating"
-            value="5"
-            checked={rating === 5}
-            onChange={onChange}
-            required
-          />
-        </Circle>
+        <Radio
+          label="1"
+          name="rating"
+          value="1"
+          checked={rating === 1}
+          onChange={onChange}
+          required
+        />
+        <Radio
+          label="2"
+          name="rating"
+          value="2"
+          checked={rating === 2}
+          onChange={onChange}
+          required
+        />
+        <Radio
+          label="3"
+          name="rating"
+          value="3"
+          checked={rating === 3}
+          onChange={onChange}
+          required
+        />
+        <Radio
+          label="4"
+          name="rating"
+          value="4"
+          checked={rating === 4}
+          onChange={onChange}
+          required
+        />
+        <Radio
+          label="5"
+          name="rating"
+          value="5"
+          checked={rating === 5}
+          onChange={onChange}
+          required
+        />
       </Numbers>
-      <Button type="submit">Submit</Button>
+      <Button type="submit">SUBMIT</Button>
     </RatingForm>
   );
 }

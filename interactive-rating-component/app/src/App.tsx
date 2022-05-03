@@ -3,6 +3,7 @@ import { Container } from "./components/Container/";
 import { Modal } from "./components/Modal";
 import { Rating } from "./components/Rating";
 import { ThankYou } from "./components/ThankYou";
+import GlobalStyle from "./styles/GlobalStyle";
 
 export default function App() {
   const [displayCard, setDisplayCard] = useState("rating");
@@ -18,19 +19,22 @@ export default function App() {
   }
 
   return (
-    <Container>
-      <Modal>
-        {displayCard === "rating" && (
-          <Rating
-            rating={rating}
-            onChange={handleRatingChange}
-            onSubmit={handleSubmit}
-          />
-        )}
-        {displayCard === "thankYou" && (
-          <ThankYou rating={rating ? rating : 0} />
-        )}
-      </Modal>
-    </Container>
+    <>
+      <GlobalStyle />
+      <Container>
+        <Modal>
+          {displayCard === "rating" && (
+            <Rating
+              rating={rating}
+              onChange={handleRatingChange}
+              onSubmit={handleSubmit}
+            />
+          )}
+          {displayCard === "thankYou" && (
+            <ThankYou rating={rating ? rating : 0} />
+          )}
+        </Modal>
+      </Container>
+    </>
   );
 }
